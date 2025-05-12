@@ -29,5 +29,5 @@ coverage
 
 *.tsbuildinfo
 Dockerfile
-vite.config.js*
-package.json*
+vite.config.js
+package.json
