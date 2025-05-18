@@ -28,6 +28,3 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-Dockerfile
-vite.config.js
-package.json
