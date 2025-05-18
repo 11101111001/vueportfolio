@@ -2,10 +2,11 @@ import { createApp } from 'vue'
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
 
-// NEW: theme preset
 import Aura from '@primeuix/themes/aura'
 
 import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
+import '@/assets/tailwind.css'
 
 import App from './App.vue'
 

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useToast } from 'primevue/usetoast'
+
 import Card from 'primevue/card'
 import InputText from 'primevue/inputtext'
 import Password from 'primevue/password'
@@ -19,6 +20,7 @@ async function onSubmit() {
 
   if (email.value === 'admin@example.com' && password.value === 'secret') {
     toast.add({ severity: 'success', detail: 'Logged in!', life: 2500 })
+    // store auth state / redirect here
   } else {
     toast.add({ severity: 'error', detail: 'Invalid credentials', life: 3000 })
   }
@@ -26,67 +28,67 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div class="login-wrapper">
-    <Card class="login-card">
-      <template #title>Welcome back</template>
-      <template #subtitle>Sign in to continue</template>
+  <!-- Full‑screen flex wrapper -->
+  <div class="surface-ground flex align-items-center justify-content-center h-screen px-4">
+    <!-- Glass‑styled card with subtle fade‑in animation -->
+    <Card class="w-full sm:w-30rem p-6 fadein animation-duration-500 glass">
+      <template #title>
+        <div class="text-center">
+          <i class="pi pi-user text-4xl surface-900 mb-2"></i>
+          <h2 class="font-semibold text-2xl mt-0 mb-1">Welcome back</h2>
+          <p class="text-color-secondary m-0">Sign in to continue</p>
+        </div>
+      </template>
 
       <template #content>
-        <form @submit.prevent="onSubmit" class="p-fluid">
-          <div class="p-field">
+        <!-- PrimeFlex grid utilities give us modern spacing without custom CSS -->
+        <form @submit.prevent="onSubmit" class="grid gap-3">
+          <!-- Float‑label email input -->
+          <span class="p-float-label">
+            <InputText id="email" v-model="email" type="email" class="w-full" />
             <label for="email">Email</label>
-            <InputText id="email" v-model="email" type="email" required />
-          </div>
+          </span>
 
-          <div class="p-field">
+          <!-- Float‑label password input with toggle‑mask -->
+          <span class="p-float-label">
+            <Password
+              id="password"
+              v-model="password"
+              class="w-full"
+              toggle-mask
+              :feedback="false"
+              inputStyle="{ width: '100%' }"
+            />
             <label for="password">Password</label>
-            <Password id="password" v-model="password" toggle-mask :feedback="false" required />
-          </div>
+          </span>
 
-          <Button
-            type="submit"
-            :loading="loading"
-            label="Log in"
-            class="login-button p-button-rounded p-button-lg"
-          />
+          <Button label="Log in" type="submit" class="w-full mt-2" :loading="loading" />
         </form>
       </template>
     </Card>
 
-    <!-- Tiny success/failure feedback -->
     <Toast />
   </div>
 </template>
 
 <style scoped>
-.login-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e9e9ff 100%);
-}
-
-.login-card {
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+/* Glass‑morphism helper class */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
   border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
 }
 
-.login-button {
-  margin-top: 1rem;
-  width: 100%;
+/* Tweak float‑label visuals */
+label {
+  color: var(--text-color-secondary);
 }
 
-/* fine-tune PrimeVue elements */
-.p-inputtext,
-.p-password-input {
-  border-radius: 0.5rem;
-}
-
-.p-card-title {
-  font-size: 1.4rem;
-  font-weight: 600;
+/* Make input/Password fields pill‑shaped and spacious */
+:deep(.p-inputtext),
+:deep(.p-password-input) {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
 }
 </style>
