@@ -1,94 +1,74 @@
 <script setup>
 import { ref } from 'vue'
-import { useToast } from 'primevue/usetoast'
-
-import Card from 'primevue/card'
-import InputText from 'primevue/inputtext'
-import Password from 'primevue/password'
-import Button from 'primevue/button'
-import Toast from 'primevue/toast'
-
-const email = ref('')
-const password = ref('')
-const loading = ref(false)
-const toast = useToast()
-
-async function onSubmit() {
-  loading.value = true
-  await new Promise((r) => setTimeout(r, 800))
-  loading.value = false
-
-  if (email.value === 'admin@example.com' && password.value === 'secret') {
-    toast.add({ severity: 'success', detail: 'Logged in!', life: 2500 })
-    // store auth state / redirect here
-  } else {
-    toast.add({ severity: 'error', detail: 'Invalid credentials', life: 3000 })
-  }
-}
 </script>
 
 <template>
-  <!-- Full‑screen flex wrapper -->
-  <div class="surface-ground flex align-items-center justify-content-center h-screen px-4">
-    <!-- Glass‑styled card with subtle fade‑in animation -->
-    <Card class="w-full sm:w-30rem p-6 fadein animation-duration-500 glass">
-      <template #title>
-        <div class="text-center">
-          <i class="pi pi-user text-4xl surface-900 mb-2"></i>
-          <h2 class="font-semibold text-2xl mt-0 mb-1">Welcome back</h2>
-          <p class="text-color-secondary m-0">Sign in to continue</p>
-        </div>
-      </template>
+  <div class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <img
+        class="mx-auto h-10 w-auto"
+        src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+        alt="Your Company"
+      />
+      <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+        Sign in to your account
+      </h2>
+    </div>
 
-      <template #content>
-        <!-- PrimeFlex grid utilities give us modern spacing without custom CSS -->
-        <form @submit.prevent="onSubmit" class="grid gap-3">
-          <!-- Float‑label email input -->
-          <span class="p-float-label">
-            <InputText id="email" v-model="email" type="email" class="w-full" />
-            <label for="email">Email</label>
-          </span>
-
-          <!-- Float‑label password input with toggle‑mask -->
-          <span class="p-float-label">
-            <Password
-              id="password"
-              v-model="password"
-              class="w-full"
-              toggle-mask
-              :feedback="false"
-              inputStyle="{ width: '100%' }"
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form class="space-y-6" action="#" method="POST">
+        <div>
+          <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
+          <div class="mt-2">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              autocomplete="email"
+              required=""
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
             />
-            <label for="password">Password</label>
-          </span>
+          </div>
+        </div>
 
-          <Button label="Log in" type="submit" class="w-full mt-2" :loading="loading" />
-        </form>
-      </template>
-    </Card>
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
+            <div class="text-sm">
+              <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+          <div class="mt-2">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              autocomplete="current-password"
+              required=""
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            />
+          </div>
+        </div>
 
-    <Toast />
+        <div>
+          <button
+            type="submit"
+            class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+
+      <p class="mt-10 text-center text-sm/6 text-gray-500">
+        Not a member?
+        {{ ' ' }}
+        <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500"
+          >Start a 14 day free trial</a
+        >
+      </p>
+    </div>
   </div>
 </template>
-
-<style scoped>
-/* Glass‑morphism helper class */
-.glass {
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(6px);
-}
-
-/* Tweak float‑label visuals */
-label {
-  color: var(--text-color-secondary);
-}
-
-/* Make input/Password fields pill‑shaped and spacious */
-:deep(.p-inputtext),
-:deep(.p-password-input) {
-  border-radius: 0.75rem;
-  padding: 0.75rem 1rem;
-}
-</style>
