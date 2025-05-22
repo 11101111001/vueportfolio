@@ -12,8 +12,11 @@
     "stop": "pkill --signal SIGINT myApp"
   },
   "dependencies": {
+    "@auth0/auth0-vue": "^2.4.0",
     "@primeuix/themes": "^1.1.1",
     "@tailwindcss/vite": "^4.1.7",
+    "auth0": "^4.23.0",
+    "express-oauth2-jwt-bearer": "^1.6.1",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.4",
