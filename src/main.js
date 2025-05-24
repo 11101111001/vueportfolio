@@ -9,6 +9,8 @@ import 'primeicons/primeicons.css'
 
 const app = createApp(App)
 
+console.log('▶️ Redirect URI:', import.meta.env.VITE_AUTH0_CALLBACK_URL)
+
 app
   .use(router)
   .use(PrimeVue, {

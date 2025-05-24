@@ -1,10 +1,9 @@
-import HomePage from '@/index/HomePage.vue'
+import HomePage from '@/views/HomePage.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { authGuard } from '@auth0/auth0-vue'
 
-const NotFoundPage = () => import('@/index/not-found-page.vue')
-const ProtectedPage = () => import('@/index/portfolio-page.vue')
-const CallbackPage = () => import('@/index/callback-page.vue')
+const NotFoundPage = () => import('@/views/not-found-page.vue')
+const CallbackPage = () => import('@/views/callback-page.vue')
 
 const routes = [
   {
@@ -12,11 +11,6 @@ const routes = [
     name: 'home',
     component: HomePage,
     beforeEnter: authGuard,
-  },
-  {
-    path: '/protected',
-    name: 'protected',
-    component: ProtectedPage,
   },
   {
     path: '/callback',
