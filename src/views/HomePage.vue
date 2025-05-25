@@ -1,70 +1,74 @@
 <template>
-  <div class="overflow-hidden bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+  <!-- hero -->
+  <section
+    class="relative flex flex-col items-center justify-center min-h-[50vh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white text-center"
+  >
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
+      My Private&nbsp;Portfolio
+    </h1>
+    <p class="mt-4 max-w-xl text-lg md:text-xl text-slate-200">
+      Hand-picked projects, available exclusively to reviewers &amp; recruiters.
+    </p>
+
+    <RouterLink
+      to="/login"
+      class="mt-8 inline-block rounded-xl bg-emerald-500 px-6 py-3 text-lg font-semibold shadow-md transition hover:bg-emerald-600"
+    >
+      Log in to access
+    </RouterLink>
+
+    <!-- simple decorative waves -->
+    <svg
+      class="absolute bottom-0 left-0 w-full translate-y-full text-slate-100"
+      viewBox="0 0 1440 80"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0,32L1440,80L1440,0L0,0Z" opacity="0.25" />
+    </svg>
+  </section>
+
+  <!-- project grid -->
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h2 class="mb-8 text-3xl font-bold text-slate-800">Featured projects</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <RouterLink
+        v-for="project in projects"
+        :key="project.slug"
+        :to="`/projects/${project.slug}`"
+        class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-lg"
       >
-        <div class="lg:pt-4 lg:pr-8">
-          <div class="lg:max-w-lg">
-            <h2 class="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-            <p
-              class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-            >
-              A better workflow
-            </p>
-            <p class="mt-6 text-lg/8 text-gray-600">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-              suscipit eaque, iste dolor cupiditate blanditiis ratione.
-            </p>
-            <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-              <div v-for="feature in features" :key="feature.name" class="relative pl-9">
-                <dt class="inline font-semibold text-gray-900">
-                  <component
-                    :is="feature.icon"
-                    class="absolute top-1 left-1 size-5 text-indigo-600"
-                    aria-hidden="true"
-                  />
-                  {{ feature.name }}
-                </dt>
-                {{ ' ' }}
-                <dd class="inline">{{ feature.description }}</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-        <img
-          src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-          alt="Product screenshot"
-          class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0"
-          width="2432"
-          height="1442"
-        />
-      </div>
+        <h3 class="mb-2 text-xl font-semibold text-slate-900 group-hover:text-emerald-600">
+          {{ project.title }}
+        </h3>
+        <p class="text-sm text-slate-600">
+          {{ project.description }}
+        </p>
+      </RouterLink>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/vue/20/solid'
+import { ref } from 'vue'
 
-const features = [
+// Static list is fine for now; replace with API call later.
+const projects = ref([
   {
-    name: 'Dont look at me.',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: CloudArrowUpIcon,
+    slug: 'alpha',
+    title: 'Project Alpha',
+    description: 'High-performance cache-coherence simulator.',
   },
   {
-    name: 'SSL certificates.',
-    description:
-      'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+    slug: 'beta',
+    title: 'Project Beta',
+    description: 'Socket-based file transfer protocol (GETFILE).',
   },
   {
-    name: 'Database backups.',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ServerIcon,
+    slug: 'gamma',
+    title: 'Project Gamma',
+    description: 'Vue + Grpc web dashboard with Auth0 gating.',
   },
-]
+])
 </script>
