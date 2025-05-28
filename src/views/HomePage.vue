@@ -45,23 +45,4 @@ function handleLogout() {
     },
   })
 }
-
-// Static list is fine for now; replace with API call later.
-const projects = ref([
-  {
-    slug: 'alpha',
-    title: 'Project Alpha',
-    description: 'High-performance cache-coherence simulator.',
-  },
-  {
-    slug: 'beta',
-    title: 'Project Beta',
-    description: 'Socket-based file transfer protocol (GETFILE).',
-  },
-  {
-    slug: 'gamma',
-    title: 'Project Gamma',
-    description: 'Vue + Grpc web dashboard with Auth0 gating.',
-  },
-])
 </script>
