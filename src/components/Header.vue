@@ -35,7 +35,7 @@
           <transition name="fade">
             <div
               v-if="open"
-              class="absolute left-0 z-50 mt-2 w-48 rounded-lg bg-white dark:bg-gray-700 shadow-lg ring-1 ring-black/5"
+              class="absolute left-0 z-50 mt-2 w-48 rounded-lg overflow-hidden bg-white dark:bg-gray-700 shadow-lg ring-1 ring-black/5"
             >
               <router-link
                 v-for="p in projects"
