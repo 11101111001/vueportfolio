@@ -6,6 +6,8 @@ import router from './router'
 
 import './style.css'
 import 'primeicons/primeicons.css'
+import Menubar from 'primevue/menubar'
+import Button from 'primevue/button'
 
 const app = createApp(App)
 
@@ -16,6 +18,8 @@ app
   .use(PrimeVue, {
     theme: 'none',
   })
+  .component('Menubar', Menubar)
+  .component('Button', Button)
   .use(
     createAuth0({
       domain: import.meta.env.VITE_AUTH0_DOMAIN,

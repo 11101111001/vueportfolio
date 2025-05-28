@@ -1,31 +1,11 @@
 <template>
-  <!-- hero -->
   <section
     class="relative flex flex-col items-center justify-center min-h-[50vh] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white text-center"
   >
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-lg">
-      My Private&nbsp;Portfolio
+      We'll put not cringe fucking text here soon
     </h1>
-    <p class="mt-4 max-w-xl text-lg md:text-xl text-slate-200">
-      Hand-picked projects, available exclusively to reviewers &amp; recruiters.
-    </p>
-
-    <RouterLink
-      to="/login"
-      class="mt-8 inline-block rounded-xl bg-emerald-500 px-6 py-3 text-lg font-semibold shadow-md transition hover:bg-emerald-600"
-    >
-      Log in to access
-    </RouterLink>
-
-    <!-- simple decorative waves -->
-    <svg
-      class="absolute bottom-0 left-0 w-full translate-y-full text-slate-100"
-      viewBox="0 0 1440 80"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M0,32L1440,80L1440,0L0,0Z" opacity="0.25" />
-    </svg>
+    <p class="mt-4 max-w-xl text-lg md:text-xl text-slate-200">Same not cringe text here</p>
   </section>
 
   <!-- project grid -->
@@ -52,6 +32,19 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useAuth0 } from '@auth0/auth0-vue'
+import { projects } from '@/data/projects'
+
+const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
+
+function handleLogout() {
+  console.log('Logging out…')
+  logout({
+    logoutParams: {
+      returnTo: window.location.origin, // <-- explicit window
+    },
+  })
+}
 
 // Static list is fine for now; replace with API call later.
 const projects = ref([
