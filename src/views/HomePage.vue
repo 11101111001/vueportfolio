@@ -13,19 +13,17 @@
     <h2 class="mb-8 text-3xl font-bold text-slate-800">Featured projects</h2>
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <RouterLink
-        v-for="project in projects"
-        :key="project.slug"
-        :to="`/projects/${project.slug}`"
-        class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-lg"
+      <router-link
+        v-for="p in projects"
+        :key="p.slug"
+        :to="`/projects/${p.slug}`"
+        class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-emerald-500"
       >
         <h3 class="mb-2 text-xl font-semibold text-slate-900 group-hover:text-emerald-600">
-          {{ project.title }}
+          {{ p.title }}
         </h3>
-        <p class="text-sm text-slate-600">
-          {{ project.description }}
-        </p>
-      </RouterLink>
+        <p class="text-sm text-slate-600">{{ p.description }}</p>
+      </router-link>
     </div>
   </section>
 </template>

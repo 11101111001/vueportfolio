@@ -1,17 +1,17 @@
 export const projects = [
   {
-    slug: 'alpha',
-    title: 'Project Alpha',
-    description: 'High-performance cache-coherence simulator.',
+    slug: 'mtgrpc',
+    title: 'MT gRPC',
+    componentPath: '@/views/projects/MtGrpc.vue',
   },
   {
-    slug: 'beta',
-    title: 'Project Beta',
-    description: 'Socket-based file transfer protocol (GETFILE).',
+    slug: 'cpu',
+    title: 'CPU Simulator',
+    componentPath: '@/views/projects/CPU.vue',
   },
   {
-    slug: 'gamma',
-    title: 'Project Gamma',
-    description: 'Vue + gRPC dashboard with Auth0 gating.',
+    slug: 'caching-proxy',
+    title: 'Caching Proxy',
+    componentPath: '@/views/projects/CachingProxy.vue',
   },
 ]
