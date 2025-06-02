@@ -1,12 +1,12 @@
 export const projects = [
   {
     slug: 'mtgrpc',
-    title: 'MT gRPC',
+    title: 'Multi-Threaded gRPC Server',
     componentPath: '@/views/projects/MtGrpc.vue',
   },
   {
     slug: 'cpu',
-    title: 'CPU Simulator',
+    title: 'MIPS Simulator',
     componentPath: '@/views/projects/CPU.vue',
   },
   {
