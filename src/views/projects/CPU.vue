@@ -1,17 +1,12 @@
 <template>
-  <div class="overflow-hidden bg-white py-24 sm:py-32">
+  <div class="overflow-hidden bg-neutral-900 py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
         class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
       >
         <div class="lg:pt-4 lg:pr-8">
           <div class="lg:max-w-lg">
-            <h2 class="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-            <p
-              class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-            >
-              A better workflow
-            </p>
+            <h2 class="text-base/7 font-semibold text-green-400">MIPS Sim</h2>
             <p class="mt-6 text-lg/8 text-gray-600">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
               suscipit eaque, iste dolor cupiditate blanditiis ratione.

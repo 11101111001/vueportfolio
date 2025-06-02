@@ -8,6 +8,7 @@ export const projects = [
     slug: 'cpu',
     title: 'MIPS Simulator',
     componentPath: '@/views/projects/CPU.vue',
+    image: new URL('@/assets/images/SMPCache.png', import.meta.url).href,
   },
   {
     slug: 'caching-proxy',

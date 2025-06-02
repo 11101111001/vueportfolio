@@ -10,15 +10,16 @@
         Here is a wonderful portfolio page!
       </h1>
       <p class="mt-4 max-w-2xl text-lg md:text-xl text-green-400">
-        For hiring team members looking for more information that can not be found on my GitHub.
+        For recruiting members looking for more information that can not be found on my GitHub.
       </p>
     </section>
+
+    <div class="mx-auto mb-8 w-1/2 border-t border-neutral-700"></div>
 
     <!-- ───────────── Featured projects grid ──────────── -->
     <section class="mx-auto max-w-6xl px-6 py-10">
       <h2 class="mb-8 text-3xl font-bold">Featured projects</h2>
 
-      <!-- 1 × 2 × 3 responsive grid, taller cards -->
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <router-link
           v-for="p in projects"
@@ -30,7 +31,7 @@
           <img
             :src="p.image"
             :alt="`${p.title} code screenshot`"
-            class="absolute inset-0 h-full w-full object-cover opacity-25 transition group-hover:opacity-40"
+            class="absolute inset-0 h-full w-full object-cover opacity-75 transition group-hover:opacity-40"
           />
 
           <!-- Text overlay -->
