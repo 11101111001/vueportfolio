@@ -65,7 +65,7 @@
           </transition>
         </div>
 
-        <!-- Logout (green button) -->
+        <!-- Logout -->
         <button
           @click="handleLogout"
           class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"

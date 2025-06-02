@@ -2,7 +2,6 @@
   <!-- One-page dark background -->
   <div class="min-h-screen bg-neutral-900 text-white">
     <!-- ─────────────────── Hero ─────────────────── -->
-    <!-- Pull the hero up a bit so the project cards get more room -->
     <section
       class="flex flex-col items-center justify-center h-[35vh] md:h-[30vh] text-center px-6"
     >
@@ -50,18 +49,5 @@
 </template>
 
 <script setup>
-/* projects now include an `image` property that points at a code-screenshot
-   (e.g. `/assets/projects/foo.png`).  Example:
-
-   export const projects = [
-     {
-       slug: 'echo-server',
-       title: 'C Echo Server',
-       description: 'Multithreaded TCP echo service with 15-byte window.',
-       image: '/assets/projects/echo-server-code.png'
-     },
-     …
-   ]
-*/
 import { projects } from '@/data/projects'
 </script>
