@@ -9,4 +9,7 @@ A secure, self-hosted portfolio site built with Vue.js and PrimeVue. Designed fo
 - **Deployment:** Docker
 - **Tunnel / Reverse Proxy:** Cloudflare Tunnel, NGINX
 - **Dev Tools:** Vite, Node.js
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5d69bd2 (work please)
