@@ -46,6 +46,8 @@
 
 <script setup>
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/vue/20/solid'
+import CodeViewer from '@/components/CodeViewer.vue'
+const fileUrl = 'https://github.com/11101111001/HPCA/blob/main/src/libcmp/SMPCache.cpp'
 
 const features = [
   {

@@ -30,3 +30,4 @@ coverage
 *.tsbuildinfo
 authAPI
 .env
+/src/assets/code/*

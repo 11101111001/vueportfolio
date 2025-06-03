@@ -27,13 +27,7 @@
             </dl>
           </div>
         </div>
-        <img
-          src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-          alt="Product screenshot"
-          class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0"
-          width="2432"
-          height="1442"
-        />
+        <CodeViewer :codeText="coreSource" lang="c" :maxHeight="40" />
       </div>
     </div>
   </div>
@@ -41,6 +35,8 @@
 
 <script setup>
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/vue/20/solid'
+import CodeViewer from '@/components/CodeViewer.vue'
+import coreSource from '@/assets/code/SMPCache-1.cpp?raw'
 
 const features = [
   {

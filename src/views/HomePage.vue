@@ -1,5 +1,4 @@
 <template>
-  <!-- One-page dark background -->
   <div class="min-h-screen bg-neutral-900 text-white">
     <!-- ─────────────────── Hero ─────────────────── -->
     <section
