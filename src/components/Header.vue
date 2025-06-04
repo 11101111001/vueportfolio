@@ -12,7 +12,7 @@
         <!-- Home -->
         <router-link
           to="/"
-          class="px-3 py-2 rounded-md text-gray-300 hover:text-green-400 hover:bg-gray-800 transition"
+          class="px-3 py-2 rounded-md text-white hover:text-green-400 hover:bg-gray-800 transition"
         >
           Home
         </router-link>

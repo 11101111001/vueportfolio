@@ -45,7 +45,7 @@ pre code {
 .hljs-selector-tag,
 .hljs-built_in,
 .hljs-type {
-  color: #ff79c6 !important; /* pinkish */
+  color: #ff79c6 !important;
 }
 .hljs-string,
 .hljs-title,
