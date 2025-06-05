@@ -17,8 +17,6 @@ library.add(faEnvelope, faGithub, faLinkedin)
 
 const app = createApp(App)
 
-console.log('▶️ Redirect URI:', import.meta.env.VITE_AUTH0_CALLBACK_URL)
-
 app
   .component('font-awesome-icon', FontAwesomeIcon)
   .use(router)
@@ -31,10 +29,16 @@ app
     createAuth0({
       domain: import.meta.env.VITE_AUTH0_DOMAIN,
       clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
+
       authorizationParams: {
         redirect_uri: import.meta.env.VITE_AUTH0_CALLBACK_URL,
       },
-    }),
+      
+      onRedirectCallback: (appState) => {
+        const target = appState?.targetUrl || '/'
+        router.replace(target)
+      },
+    })
   )
 
 app.mount('#app')

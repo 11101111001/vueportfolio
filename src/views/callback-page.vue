@@ -1,3 +1,6 @@
-<script setup></script>
+<template>
+  <div>Logging you in…</div>
+</template>
 
-<template></template>
+<script setup>
+</script>
