@@ -6,7 +6,6 @@ import CallbackPage from '@/views/callback-page.vue'
 import NotFoundPage from '@/views/not-found-page.vue'
 import AboutPage from '@/views/About.vue'
 
-// static imports of your project pages:
 import MtGrpc from '@/views/projects/MtGrpc.vue'
 import CPU from '@/views/projects/CPU.vue'
 import CachingProxy from '@/views/projects/CachingProxy.vue'

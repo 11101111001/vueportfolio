@@ -1,5 +1,11 @@
 <template>
   <div class="min-h-screen bg-neutral-900 text-white">
+
+    <div
+      class="fixed top-24 left-12 z-50 bg-green-500 text-white text-xs font-semibold uppercase px-3 py-1 rounded-lg shadow-lg"
+    >
+      Page is still in development!
+    </div>
     <!-- ─────────────────── Hero ─────────────────── -->
     <section
       class="flex flex-col items-center justify-center h-[35vh] md:h-[30vh] text-center px-6"
@@ -29,7 +35,7 @@
           <img
             :src="p.image"
             :alt="`${p.title} code screenshot`"
-            class="absolute inset-0 h-full w-full object-cover opacity-75 transition group-hover:opacity-40"
+            class="absolute inset-0 h-full w-full object-cover opacity-95 transition group-hover:opacity-40 saturate-150"
           />
 
           <!-- Text overlay -->
