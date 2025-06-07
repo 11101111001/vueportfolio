@@ -10,8 +10,7 @@
               Multi-Threaded gRPC Server/Client
             </h2>
             <p class="mt-6 text-lg/8 text-gray-600">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
-              suscipit eaque, iste dolor cupiditate blanditiis ratione.
+              There will be some interesting information here eventually! (The source file is correct through)
             </p>
           </div>
         </div>
@@ -22,7 +21,6 @@
 </template>
 
 <script setup>
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/vue/20/solid'
 import CodeViewer from '@/components/CodeViewer.vue'
-import coreSource from '@/assets/code/SMPCache-1.cpp?raw'
+import coreSource from '@/assets/code/dfslib-clientnode-p2.cpp?raw'
 </script>

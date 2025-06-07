@@ -14,7 +14,7 @@
         Here is a wonderful portfolio page!
       </h1>
       <p class="mt-4 max-w-2xl text-lg md:text-xl text-green-400">
-        For recruiting members looking for more information that can not be found on my GitHub.
+        For recruiting members looking for more information that can not be found on GitHub.
       </p>
     </section>
 
