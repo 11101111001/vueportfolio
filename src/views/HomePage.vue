@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-neutral-900 text-white">
 
     <div
-      class="fixed top-24 left-12 z-50 bg-green-500 text-white text-xs font-semibold uppercase px-3 py-1 rounded-lg shadow-lg"
+      class="top-24 text-center left-12 z-50 bg-green-500 text-white text-xs font-semibold uppercase px-3 py-1 rounded-lg shadow-lg"
     >
       Page is still in development!
     </div>
@@ -11,7 +11,7 @@
       class="flex flex-col items-center justify-center h-[35vh] md:h-[30vh] text-center px-6"
     >
       <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
-        Here is a wonderful portfolio page!
+        Welcome to my Portfolio Page!
       </h1>
       <p class="mt-4 max-w-2xl text-lg md:text-xl text-green-400">
         For recruiting members looking for more information that can not be found on GitHub.

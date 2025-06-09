@@ -20,7 +20,7 @@
         <!-- About -->
         <router-link
           to="/about"
-          class="px-3 py-2 rounded-md text-gray-300 hover:text-green-400 hover:bg-gray-800 transition"
+          class="px-3 py-2 rounded-md text-white hover:text-green-400 hover:bg-gray-800 transition"
         >
           About
         </router-link>
@@ -30,7 +30,7 @@
           <!-- Projects button -->
           <button
             @click="toggle"
-            class="flex items-center px-3 py-2 rounded-md text-gray-300 hover:text-green-400 hover:bg-gray-800 transition focus:outline-none"
+            class="flex items-center px-3 py-2 rounded-md text-white hover:text-green-400 hover:bg-gray-800 transition focus:outline-none"
           >
             Projects
             <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
