@@ -67,11 +67,11 @@
 
         <!-- Logout -->
         <button
-          @click="handleLogout"
-          class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
-        >
-          Log Out
-        </button>
+         @click="handleAuthClick"
+         class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
+       >
+         {{ isAuthenticated ? 'Log Out' : 'Log In' }}
+       </button>
       </div>
     </div>
   </nav>
@@ -87,9 +87,14 @@ function toggle() {
   open.value = !open.value
 }
 
-const { logout } = useAuth0()
-function handleLogout() {
-  logout({ logoutParams: { returnTo: window.location.origin } })
+const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
+
+function handleAuthClick() {
+  if (isAuthenticated.value) {
+    logout({ logoutParams: { returnTo: window.location.origin } })
+  } else {
+    loginWithRedirect()
+  }
 }
 </script>
 

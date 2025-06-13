@@ -2,15 +2,17 @@
 import { useAuth0 } from '@auth0/auth0-vue'
 import Header from '@/components/Header.vue'
 
-const { isLoading, isAuthenticated, error } = useAuth0()
+const { isLoading, error } = useAuth0()
 </script>
 
 <template>
   <div
-    v-if="isLoading || (!isAuthenticated && !error)"
+    v-if="isLoading"
     class="flex h-screen items-center justify-center bg-white dark:bg-neutral-900"
   >
-    <span class="animate-pulse text-lg text-green-500 dark:text-green-300"> Loading… </span>
+    <span class="animate-pulse text-lg text-green-500 dark:text-green-300">
+      Loading…
+    </span>
   </div>
 
   <div v-else-if="error" class="p-6 text-red-600">
