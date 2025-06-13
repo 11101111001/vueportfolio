@@ -15,17 +15,14 @@ const routes = [
   {
     path: '/projects/cpu',
     component: CPU,
-    meta: { requiresAuth: true }
   },
   {
     path: '/projects/caching-proxy',
     component: CachingProxy,
-    meta: { requiresAuth: true }
   },
   {
     path: '/projects/mtgrpc',
     component: MtGrpc,
-    meta: { requiresAuth: true }
   },
   { path: '/:catchAll(.*)',    component: NotFoundPage },
 ]
@@ -33,15 +30,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
-})
-
-router.beforeEach((to, from) => {
-  if (to.meta.requiresAuth) {
-    sessionStorage.setItem('auth_redirect_target', to.fullPath)
-    return authGuard(to, from)
-  }
-
-  return true
 })
 
 export default router

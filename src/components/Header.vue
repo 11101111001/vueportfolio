@@ -80,6 +80,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useAuth0 } from '@auth0/auth0-vue'
+import { useLogin } from '@/assets/useLogin'
 import { projects } from '@/data/projects'
 
 const open = ref(false)
@@ -88,12 +89,13 @@ function toggle() {
 }
 
 const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
+const { login } = useLogin()
 
-function handleAuthClick() {
+function handleAuthClick () {
   if (isAuthenticated.value) {
     logout({ logoutParams: { returnTo: window.location.origin } })
   } else {
-    loginWithRedirect()
+    login()
   }
 }
 </script>

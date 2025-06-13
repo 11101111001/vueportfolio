@@ -26,6 +26,9 @@ app.use(
     authorizationParams: {
       redirect_uri: window.location.origin
     },
+    onRedirectCallback: (appState) => {
+      router.replace(appState?.targetUrl || '/')
+    }
   })
 )
 
