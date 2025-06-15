@@ -22,7 +22,7 @@
 
     <!-- ───────────── Featured projects grid ──────────── -->
     <section class="mx-auto max-w-6xl px-6 py-10">
-      <h2 class="mb-8 text-3xl font-bold">Featured projects</h2>
+      <h2 class="mb-8 text-3xl text-center font-bold">Featured projects</h2>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <router-link
@@ -55,4 +55,6 @@
 
 <script setup>
 import { projects } from '@/data/projects'
+import { useLogin } from '@/assets/useLogin'
+const { login } = useLogin()
 </script>

@@ -50,7 +50,7 @@
           <transition name="fade">
             <div
               v-if="open"
-              class="absolute left-0 top-full mt-2 w-48 overflow-hidden rounded-lg bg-gray-600 shadow-lg ring-1 ring-black/50"
+              class="absolute left-0 top-full mt-2 w-48 overflow-hidden rounded-lg bg-gray-600 shadow-lg ring-1 ring-black/50 z-50"
             >
               <router-link
                 v-for="p in projects"
@@ -67,11 +67,11 @@
 
         <!-- Logout -->
         <button
-          @click="handleLogout"
-          class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
-        >
-          Log Out
-        </button>
+         @click="handleAuthClick"
+         class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition"
+       >
+         {{ isAuthenticated ? 'Log Out' : 'Log In' }}
+       </button>
       </div>
     </div>
   </nav>
@@ -80,16 +80,31 @@
 <script setup>
 import { ref } from 'vue'
 import { useAuth0 } from '@auth0/auth0-vue'
+import { useLogin } from '@/assets/useLogin'
 import { projects } from '@/data/projects'
+import { useRouter } from 'vue-router'
 
 const open = ref(false)
 function toggle() {
   open.value = !open.value
 }
 
-const { logout } = useAuth0()
-function handleLogout() {
-  logout({ logoutParams: { returnTo: window.location.origin } })
+const { isAuthenticated, logout } = useAuth0()
+const router = useRouter()
+const { login } = useLogin()
+
+function handleAuthClick () {
+  if (isAuthenticated.value) {
+    logout({
+      logoutParams: {
+        returnTo: 
+          window.location.origin
+      },
+      appState: { targetUrl: router.currentRoute.value.fullPath }
+    })
+  } else {
+    login()
+  }
 }
 </script>
 

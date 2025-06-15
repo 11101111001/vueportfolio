@@ -17,28 +17,26 @@ library.add(faEnvelope, faGithub, faLinkedin)
 
 const app = createApp(App)
 
-app
-  .component('font-awesome-icon', FontAwesomeIcon)
-  .use(router)
-  .use(PrimeVue, {
-    theme: 'none',
-  })
-  .component('Menubar', Menubar)
-  .component('Button', Button)
-  .use(
-    createAuth0({
-      domain: import.meta.env.VITE_AUTH0_DOMAIN,
-      clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
+app.use(router)
 
-      authorizationParams: {
-        redirect_uri: import.meta.env.VITE_AUTH0_CALLBACK_URL,
-      },
-      
-      onRedirectCallback: (appState) => {
-        const target = appState?.targetUrl || '/'
-        router.replace(target)
-      },
-    })
-  )
+app.use(
+  createAuth0({
+    domain:  import.meta.env.VITE_AUTH0_DOMAIN,
+    clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
+    authorizationParams: {
+      redirect_uri: window.location.origin
+    },
+    onRedirectCallback: (appState) => {
+      router.replace(appState?.targetUrl || '/')
+    }
+  })
+)
+
+
+app
+  .use(PrimeVue, { theme: 'none' })
+  .component('Menubar', Menubar)
+  .component('Button',  Button)
+  .component('font-awesome-icon', FontAwesomeIcon)
 
 app.mount('#app')
