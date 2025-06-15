@@ -2,14 +2,9 @@
 import { useAuth0 } from '@auth0/auth0-vue'
 import { useLogin } from '@/assets/useLogin'
 
-const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0()
+const { isAuthenticated, isLoading } = useAuth0()
 const { login } = useLogin()
 
-function handleLogin () {
-  loginWithRedirect({
-    appState: { targetUrl: window.location.pathname + window.location.search }
-  })
-}
 </script>
 
 <template>
@@ -21,7 +16,7 @@ function handleLogin () {
     <div
       v-if="!isLoading && !isAuthenticated"
       class="absolute inset-0 flex flex-col items-center justify-center gap-4
-             bg-neutral-900/70 text-center text-gray-200 rounded-lg"
+             bg-neutral-900/70 text-center text-gray-200"
     >
       <p class="text-lg font-medium">
         Please sign in to view this content

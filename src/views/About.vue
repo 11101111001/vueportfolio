@@ -12,7 +12,7 @@
         visitors a good idea of what I've done, in a way that is quick and clean.
       </p>
       <p class="text-lg text-green-400 mb-8">
-        Some more background for the interested reader... I did my undergrad at the University at
+        Some more background for the interested reader... I did my undergraduate at the University at
         Buffalo where I acquired degrees in Math and Physics. I began coding in my sophomore year as
         my professors discussed its increasing importance in research. As my undergrad progressed,
         my interest in computers and their functionality grew enough to pivot from a PhD in physics
